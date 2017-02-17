@@ -1,7 +1,7 @@
 
 <!--pages/movie/selected-grid/selected-grid-template.wxml-->
 <template name="selected-grid-template">
-  <view class="selected-wrapper">
+  <view class="selected-wrapper" bindtap="bindSelected" data-selected-id="{{item}}">
     <view class="selected-content">
       <text class="name">豆瓣Top250</text>
       <text class="desc">8分以上好电影</text>

@@ -1,0 +1,21 @@
+
+<!--pages/movie/selected/selected.wxml-->
+<view class="container">
+  <view class="session-selected">
+    <block wx:for="{{[1,2, 3, 4, 5,6,7,8,9,10]}}" wx:for-index="index">
+      <view class="selected-wrapper">
+        <view class="selected-header selected-header-spacing">
+          <text class="selected-index">{{index + 1}}</text>
+        </view>
+        <view class="selected-movie-content selected-movie-content">
+          <image class="poster" src="/images/default_poster.jpg"></image>
+          <view class="movie-summary">
+            <text class="name">熊出没：奇幻空间</text>
+            <text class="rating">5颗星</text>
+            <text class="desc">熊出没：奇幻空间熊出没：奇幻空间熊出没：奇幻空间熊出没：奇幻空间熊出没：奇幻空间熊出没：奇幻空间：奇幻空间熊出没：奇幻空间熊出没：奇幻空间熊出没：奇幻空间</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

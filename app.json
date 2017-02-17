@@ -2,7 +2,8 @@
   "pages": [
     "pages/movie/movie",
     "pages/movie/search/search",
-    "pages/movie/movie-more/movie-more"
+    "pages/movie/movie-more/movie-more",
+    "pages/movie/selected/selected"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
