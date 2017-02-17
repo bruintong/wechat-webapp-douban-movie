@@ -1,10 +1,23 @@
+<import src="/pages/movie/movie-list/movie-list-template.wxml" />
 
 <!--pages/movie/movie-more/movie-more.wxml-->
 <view class="container">
-  <view class="page-session page-session-spacing">
-    <view class="session-tab session-tab-spacing">
-      <text class="tab-name {{showIntheaters? 'tab-selected' : 'tab-normal'}} " bindtap="bindSelected" data-tab-id="{{tab1}}">正在上映</text>
-      <text class="tab-name {{showComingSoon ? 'tab-selected' : 'tab-normal'}}" bindtap="bindSelected" data-tab-id="{{tab2}}">即将上映</text>
+  <view class="session-tab session-tab-spacing">
+    <text class="tab-name {{showIntheaters? 'tab-selected' : 'tab-normal'}} " bindtap="bindSelected" data-tab-id="{{tab1}}">正在热映</text>
+    <text class="tab-name {{showComingSoon ? 'tab-selected' : 'tab-normal'}}" bindtap="bindSelected" data-tab-id="{{tab2}}">即将上映</text>
+  </view>
+  <view class="session-movie session-movie-spacing">
+    <view class="session-content session-content-spacing">
+      <block wx:if="{{showIntheaters}}">
+        <block wx:for="{{[1,2, 3, 4, 5, 6]}}" wx:for-item="item">
+          <template is="movie-list-template" data="{{item}}" />
+        </block>
+      </block>
+      <block wx:if="{{showComingSoon}}">
+        <block wx:for="{{[1,2, 3]}}" wx:for-item="item">
+          <template is="movie-list-template" data="{{item}}" />
+        </block>
+      </block>
     </view>
   </view>
 </view>

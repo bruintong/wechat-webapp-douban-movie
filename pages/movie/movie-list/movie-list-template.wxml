@@ -1,0 +1,21 @@
+
+<!--pages/movie/movie-list/movie-list.wxml-->
+<template name="movie-list-template">
+  <view class="movie-wrapper">
+    <view class="movie-content">
+      <image class="poster" src="/images/default_poster.jpg"></image>
+      <view class="movie-summary">
+        <text class="name">欢乐好声音</text>
+        <text class="directors">导演：加斯</text>
+        <text class="casts">主演：张胜男 / 大咖</text>
+        <text class="wish-count" style="color:#9bdff9;">1233人想看</text>
+      </view>
+      <block wx:if="{{false}}">
+        <text class="wish-btn" style="color:#de9703;border-color:#de9703">想看</text>
+      </block>
+      <block wx:if="{{true}}">
+        <text class="ticket-btn" style="color:#9bdff9;border-color:#9bdff9">购票</text>
+      </block>
+    </view>
+  </view>
+</template>

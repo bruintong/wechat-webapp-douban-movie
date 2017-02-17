@@ -1,19 +1,23 @@
 /* pages/movie/movie-more/movie-more.wxss */
-
-.page-session-spacing {
-  margin-bottom: 0rpx;
-  padding-bottom: 0rpx;
-}
+@import "/pages/movie/movie-list/movie-list-template.wxss";
 
 .session-tab {
   width: 100%;
   display: flex;
+  position: fixed;
+  background: #fff;
+}
+
+.session-tab-spacing {
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: #e6e6e6;
 }
 
 .tab-name {
   flex: 1;
   font-size: 32rpx;
-  font-weight: 500;
+  font-weight: 600;
   height: 84rpx;
   line-height: 84rpx;
   text-align: center;
@@ -21,6 +25,7 @@
 
 .tab-selected {
   color: #32cd32;
+  border-bottom: 2px solid #32cd32;
 }
 
 .tab-normal {

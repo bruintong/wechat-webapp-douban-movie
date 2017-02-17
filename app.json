@@ -1,20 +1,20 @@
 {
-    "pages": [
-      "pages/movie/movie",
-      "pages/movie/search/search",
-      "pages/movie/movie-more/movie-more"
-    ],
-    "window": {
-      "navigationBarBackgroundColor": "#ffffff",
-      "navigationBarTextStyle": "black",
-      "navigationBarTitleText": "豆瓣电影",
-      "backgroundTextStyle": "light",
-      "enablePullDownRefresh": false
-    },
-    "networkTimeout": {
-      "request": 10000,
-      "connectSocket": 10000,
-      "uploadFile": 10000,
-      "downloadFile": 10000
-    }
+  "pages": [
+    "pages/movie/movie",
+    "pages/movie/search/search",
+    "pages/movie/movie-more/movie-more"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "豆瓣电影",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
 }
