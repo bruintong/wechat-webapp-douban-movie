@@ -1,0 +1,11 @@
+
+<!--pages/movie/movie-grid/movie-grid-template.wxml-->
+<template name="movie-grid-template">
+  <view class="movie-wrapper">
+    <view class="movie-content">
+      <image class="poster" src="/images/default_poster.jpg"></image>
+      <text class="name">熊出没：奇幻空间</text>
+      <text class="wish-count">9715人想看</text>
+    </view>
+  </view>
+</template>
