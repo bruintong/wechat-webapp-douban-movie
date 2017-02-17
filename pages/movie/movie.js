@@ -30,5 +30,10 @@ Page({
     wx.navigateTo({
       url: '/pages/movie/selected/selected'
     });
+  },
+  bindMovieDetail: function (event) {
+    wx.navigateTo({
+      url: '/pages/movie/movie-detail/movie-detail'
+    });
   }
 })

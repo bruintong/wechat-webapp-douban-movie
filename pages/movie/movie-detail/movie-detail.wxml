@@ -1,0 +1,20 @@
+
+<!--pages/movie/movie-detail/movie-detail.wxml-->
+<view class="container">
+  <view class="session-poster session-poster-spacing">
+    <image class="poster" src="/images/default_poster.jpg"></image>
+  </view>
+  <view class="summary-session">
+    <view class="movie-summary">
+      <text class="name">熊出没熊出没</text>
+      <text class="subtype">2017/动作/惊悚/冒险</text>
+      <text class="origin-name">原名：熊出没熊出没</text>
+      <text class="year">上映时间</text>
+      <text class="time">片长：107分钟</text>
+    </view>
+    <view class="movie-rating">
+      <text class="average">5.8</text>
+      <text class="ratings_count">1234人</text>
+    </view>
+  </view>
+</view>

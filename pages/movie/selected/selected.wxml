@@ -3,7 +3,7 @@
 <view class="container">
   <view class="session-selected">
     <block wx:for="{{[1,2, 3, 4, 5,6,7,8,9,10]}}" wx:for-index="index">
-      <view class="selected-wrapper">
+      <view class="selected-wrapper" bindtap="bindMovieDetail" data-movie-id="{{index}}">
         <view class="selected-header selected-header-spacing">
           <text class="selected-index">{{index + 1}}</text>
         </view>

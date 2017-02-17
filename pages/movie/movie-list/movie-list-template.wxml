@@ -1,7 +1,7 @@
 
 <!--pages/movie/movie-list/movie-list.wxml-->
 <template name="movie-list-template">
-  <view class="movie-wrapper">
+  <view class="movie-wrapper"  bindtap="bindMovieDetail" data-movie-id="{{item}}">
     <view class="movie-content">
       <image class="poster" src="/images/default_poster.jpg"></image>
       <view class="movie-summary">

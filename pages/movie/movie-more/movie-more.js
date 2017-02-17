@@ -36,5 +36,11 @@ Page({
     } else {
       console.log("error");
     }
+  },
+  bindMovieDetail: function (event) {
+    wx.navigateTo({
+      url: '/pages/movie/movie-detail/movie-detail'
+    });
   }
+
 })
