@@ -1,0 +1,43 @@
+<!--/pages/movie/movie.wxml-->
+<import src="/pages/movie/movie-grid/movie-grid-template.wxml" />
+<import src="/pages/movie/selected-grid/selected-grid-template.wxml" />
+<view class="container">
+  <view class="page-session page-session-spacing">
+    <view class="session-header">
+      <text class="session-header-title">影院热映</text>
+      <text class="session-header-more">更多</text>
+    </view>
+    <view class="session-content session-content-spacing">
+      <scroll-view class="movie-scroll" scroll-x="true">
+        <block wx:for="{{[0, 1, 2, 3, 4, 5]}}" wx:for-item="item">
+          <template is="movie-grid-template" data="{{item}}" />
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="page-session page-session-spacing">
+    <view class="session-header">
+      <text class="session-header-title">即将上映</text>
+      <text class="session-header-more">更多</text>
+    </view>
+    <view class="session-content session-content-spacing">
+      <scroll-view class="movie-scroll" scroll-x="true">
+        <block wx:for="{{[0,1, 2, 3, 4, 5, 6, 7]}}">
+          <template is="movie-grid-template" data="{{item}}" />
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="page-session page-session-spacing">
+    <view class="session-header">
+      <text class="session-header-title">精选榜单</text>
+    </view>
+    <view class="session-content session-content-spacing">
+      <scroll-view class="selected-scroll" scroll-x="true">
+        <block wx:for="{{[1, 2, 3, 4]}}">
+          <template is="selected-grid-template" data="{{item}}" />
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

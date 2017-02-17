@@ -1,0 +1,8 @@
+/** pages/movie/movie.wxss **/
+@import "/pages/movie/movie-grid/movie-grid-template.wxss";
+@import "/pages/movie/selected-grid/selected-grid-template.wxss";
+.movie-scroll, selected-scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+

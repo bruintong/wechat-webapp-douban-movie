@@ -1,0 +1,43 @@
+/* pages/movie/movie-grid/movie-grid.wxss */
+
+.movie-wrapper {
+  display: inline-block;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.movie-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-wrapper:first-child {
+  margin-left: 0rpx;
+}
+
+.movie-wrapper:last-child {
+  margin-right: 0rpx;
+}
+
+.movie-wrapper .poster {
+  width: 200rpx;
+  height: 280rpx;
+}
+
+.movie-wrapper .name {
+  width: 200rpx;
+  color: #4a4a4a;
+  font-size: 28rpx;
+  font-weight: 600;
+  line-height: 1.6;
+  word-break: keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.movie-wrapper .wish-count {
+  color: #9e9e9e;
+  font-size: 24rpx;
+  font-weight: 500;
+}
