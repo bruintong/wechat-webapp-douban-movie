@@ -15,11 +15,28 @@ page {
 
 .page-session {
   background: #fff;
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: #e6e6e6;
 }
 
 .page-session-spacing {
   margin-bottom: 30rpx;
   padding-bottom: 30rpx;
+}
+
+.session-search {
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: #e6e6e6;
+}
+
+.session-search-spacing {
+  margin-bottom: 30rpx;
 }
 
 .session-header {

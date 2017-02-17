@@ -2,6 +2,10 @@
 <import src="/pages/movie/movie-grid/movie-grid-template.wxml" />
 <import src="/pages/movie/selected-grid/selected-grid-template.wxml" />
 <view class="container">
+  <view class="session-search session-search-spacing">
+    <icon class="session-search-icon" type="search" size="16"></icon>
+    <text class="search-placeholder" bindtap="bindSearchNavigate">搜索电影</text>
+  </view>
   <view class="page-session page-session-spacing">
     <view class="session-header">
       <text class="session-header-title">影院热映</text>

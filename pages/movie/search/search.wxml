@@ -1,0 +1,12 @@
+
+<!--pages/movie/search/search.wxml-->
+<view class="container">
+  <view class="session-search session-search-spacing">
+    <icon class="search-icon" type="search" size="16"></icon>
+    <input class="search-content" placeholder-class="search-placeholder" bindinput="bindSearchInput" placeholder="搜索电影" value="{{searchValue}}" />
+    <block wx:if="{{showDelete}}">
+      <text class="search-delete" bindtap="bindSearchDelete">x</text>
+    </block>
+    <text class="search-cancel" bindtap="bindSearchCancel">取消</text>
+  </view>
+</view>
