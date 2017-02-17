@@ -1,0 +1,10 @@
+
+<!--pages/movie/movie-more/movie-more.wxml-->
+<view class="container">
+  <view class="page-session page-session-spacing">
+    <view class="session-tab session-tab-spacing">
+      <text class="tab-name {{showIntheaters? 'tab-selected' : 'tab-normal'}} " bindtap="bindSelected" data-tab-id="{{tab1}}">正在上映</text>
+      <text class="tab-name {{showComingSoon ? 'tab-selected' : 'tab-normal'}}" bindtap="bindSelected" data-tab-id="{{tab2}}">即将上映</text>
+    </view>
+  </view>
+</view>

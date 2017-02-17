@@ -1,7 +1,8 @@
 {
     "pages": [
       "pages/movie/movie",
-      "pages/movie/search/search"
+      "pages/movie/search/search",
+      "pages/movie/movie-more/movie-more"
     ],
     "window": {
       "navigationBarBackgroundColor": "#ffffff",

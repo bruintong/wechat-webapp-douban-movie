@@ -1,0 +1,28 @@
+/* pages/movie/movie-more/movie-more.wxss */
+
+.page-session-spacing {
+  margin-bottom: 0rpx;
+  padding-bottom: 0rpx;
+}
+
+.session-tab {
+  width: 100%;
+  display: flex;
+}
+
+.tab-name {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 500;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+}
+
+.tab-selected {
+  color: #32cd32;
+}
+
+.tab-normal {
+  color: #9e9e9e;
+}

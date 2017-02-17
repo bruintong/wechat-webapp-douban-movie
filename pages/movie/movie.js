@@ -20,5 +20,10 @@ Page({
     wx.navigateTo({
       url: '/pages/movie/search/search'
     })
+  },
+  bindMore: function (event) {
+    wx.navigateTo({
+      url: '/pages/movie/movie-more/movie-more'
+    });
   }
 })
