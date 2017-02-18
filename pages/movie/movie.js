@@ -33,6 +33,11 @@ Page({
   },
   getMovieListData: function (url, settedKey, categoryTitle) {
     var that = this;
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10000
+    });
     wx.request({
       url: url,
       data: {},
@@ -50,6 +55,7 @@ Page({
       },
       complete: function () {
         // complete
+        wx.hideToast();
       }
     })
   },
@@ -85,6 +91,11 @@ Page({
       console.log("handleTouchMove top250URL: " + top250URL);
       if (!this.data.acquiredSelected) {
         var that = this;
+        wx.showToast({
+          title: '加载中',
+          icon: 'loading',
+          duration: 10000
+        });
         wx.request({
           url: top250URL,
           method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
@@ -99,6 +110,7 @@ Page({
           },
           complete: function () {
             // complete
+            wx.hideToast();
           }
         });
         var readyData = {};

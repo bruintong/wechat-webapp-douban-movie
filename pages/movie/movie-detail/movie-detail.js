@@ -7,6 +7,11 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     var that = this;
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10000
+    });
     var id = options.id;
     var url = app.globalData.doubanBase + app.globalData.subject + id;
     wx.request({
@@ -61,6 +66,7 @@ Page({
       },
       complete: function () {
         console.log("complete");
+        wx.hideToast();
       }
     })
   },

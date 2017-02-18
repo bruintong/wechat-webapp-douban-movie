@@ -41,6 +41,11 @@ Page({
   },
   getMovieListData: function (url, typeId) {
     var that = this;
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10000
+    });
     wx.request({
       url: url,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
@@ -86,6 +91,7 @@ Page({
       },
       complete: function () {
         // complete
+        wx.hideToast();
       }
     });
   },

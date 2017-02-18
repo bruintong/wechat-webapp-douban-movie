@@ -9,7 +9,9 @@ Page({
     var that = this;
     var typeId = options.typeId;
     var typeTitle = options.typeTitle;
-    that.setData({"typeTitle": typeTitle});
+    wx.setNavigationBarTitle({
+      title: typeTitle
+    });
     var url = app.globalData.doubanBase + app.globalData.top250;
     that.getMovieListData(url, typeId);
 
@@ -28,6 +30,11 @@ Page({
   },
   getMovieListData: function (url, typeId) {
     var that = this;
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10000
+    });
     if (typeId == "top250") {
       url += "?start=0&&count=50";
     } else if (typeId == "weekly") {
@@ -81,12 +88,14 @@ Page({
       },
       complete: function () {
         // complete
+        wx.hideToast();
       }
     });
   },
   bindMovieDetail: function (event) {
+    var id = event.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/movie/movie-detail/movie-detail'
+      url: '/pages/movie/movie-detail/movie-detail?id=' + id
     });
   }
 })
