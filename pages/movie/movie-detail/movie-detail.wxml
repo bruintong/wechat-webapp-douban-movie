@@ -2,19 +2,18 @@
 <!--pages/movie/movie-detail/movie-detail.wxml-->
 <view class="container">
   <view class="session-poster session-poster-spacing">
-    <image class="poster" src="/images/default_poster.jpg" bindtap="bindPoster"></image>
+    <image class="poster" src="{{movie.images.large}}" bindtap="bindPoster" data-poster-url="{{movie.images.large}}"></image>
   </view>
   <view class="summary-session">
     <view class="movie-summary">
-      <text class="name">熊出没熊出没</text>
-      <text class="subtype">2017/动作/惊悚/冒险</text>
-      <text class="origin-name">原名：熊出没熊出没</text>
-      <text class="year">上映时间</text>
-      <text class="time">片长：107分钟</text>
+      <text class="name">{{movie.title}}</text>
+      <text class="subtype">{{movie.year}}/{{movie.genres}}</text>
+      <text class="origin-name">{{movie.originalTitle}}</text>
+      <text class="countries">{{movie.countries}}</text>
     </view>
     <view class="movie-rating">
-      <text class="average">5.8</text>
-      <text class="ratings_count">1234人</text>
+      <text class="average">{{movie.rating.average}}</text>
+      <text class="ratings_count">{{movie.ratingsCount}}</text>
     </view>
   </view>
   <view class="wish-do-session">
@@ -24,18 +23,18 @@
   <view class="desc-session">
     <text class="title">简介</text>
     <view class="desc-wrapper">
-      <text class="desc-content">故事聚焦在由范·迪塞尔带头的的特工小队和以甄子丹为首的反派组织之间的对决。在这部作品中，迪塞尔饰演的特工凯奇不再是孤胆英雄，他将与一群出色的伙伴共同作战：塞缪尔·杰克逊饰演的国安局特工，印度女星迪皮卡·帕度柯妮饰演的与凯奇颇有渊源的女猎人，凭借《吸血鬼日记》走红的妮娜·杜波夫扮演的技术专家，《女子监狱》女星露比·罗丝饰演的狙击手,中国当红偶像演员吴亦凡饰演的特工Nicks。</text>
+      <text class="desc-content">{{movie.summary}}</text>
       <text class="extension">展开</text>
     </view>
   </view>
   <view class="directors-casts-session">
     <view class="title">影人</view>
     <scroll-view class="directors-casts-scroll" scroll-x="true">
-      <block wx:for="{{[1, 2, 3, 4,5, 6, 7, 8, 9, 10]}}" wx:for-item="item">
+      <block wx:for="{{movie.directorsAndCasts}}" wx:for-item="item">
         <view class="directors-casts-wrapper">
           <view class="directors-casts-content">
-            <image class="image" src="/images/default_poster.jpg"></image>
-            <text class="name">熊大</text>
+            <image class="image" src="{{item.avatars.small}}"></image>
+            <text class="name">{{item.name}}</text>
           </view>
         </view>
       </block>

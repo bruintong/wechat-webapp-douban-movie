@@ -9,7 +9,7 @@
   <view class="page-session page-session-spacing">
     <view class="session-header">
       <text class="session-header-title">影院热映</text>
-      <text class="session-header-more" bindtap="bindMore">更多</text>
+      <text class="session-header-more" bindtap="bindMore" data-type-id="intheaters">更多</text>
     </view>
     <view class="session-content session-content-spacing">
       <scroll-view class="movie-scroll" scroll-x="true">
@@ -22,7 +22,7 @@
   <view class="page-session page-session-spacing">
     <view class="session-header">
       <text class="session-header-title">即将上映</text>
-      <text class="session-header-more" bindtap="bindMore">更多</text>
+      <text class="session-header-more" bindtap="bindMore" data-type-id="comingsoon">更多</text>
     </view>
     <view class="session-content session-content-spacing">
       <scroll-view class="movie-scroll" scroll-x="true">

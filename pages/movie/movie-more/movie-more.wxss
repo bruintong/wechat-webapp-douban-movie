@@ -1,5 +1,10 @@
 /* pages/movie/movie-more/movie-more.wxss */
 @import "/pages/movie/movie-list/movie-list-template.wxss";
+.session-content-spacing {
+  padding: 0rpx 30rpx 0rpx 30rpx;
+  margin-top: 0rpx;
+  box-sizing: border-box;
+}
 
 .session-tab {
   width: 100%;

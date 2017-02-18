@@ -140,19 +140,27 @@ Page({
     }
     var readyData = {};
     readyData["top250"] = {
+      categoryType: "top250",
       categoryTitle: "豆瓣Top250",
+      desc: "8分以上好电影",
       movies: top250
     };
     readyData["weekly"] = {
-      categoryTitle: "本周口碑榜",
+      categoryType: "weekly",
+      categoryTitle: "口碑榜",
+      desc: "8分以上好电影",
       movies: weekly
     };
     readyData["newMovie"] = {
+      categoryType: "newMovie",
       categoryTitle: "新片榜",
+      desc: "8分以上好电影",
       movies: newMovie
     };
     readyData["usBox"] = {
+      categoryType: "usBox",
       categoryTitle: "票房榜",
+      desc: "8分以上好电影",
       movies: usBox
     };
 
@@ -164,18 +172,22 @@ Page({
     })
   },
   bindMore: function (event) {
+    var typeId = event.currentTarget.dataset.typeId;
     wx.navigateTo({
-      url: '/pages/movie/movie-more/movie-more'
+      url: '/pages/movie/movie-more/movie-more?typeId=' + typeId
     });
   },
   bindSelected: function (event) {
+    var typeId = event.currentTarget.dataset.typeId;
+    var typeTitle = event.currentTarget.dataset.typeTitle;
     wx.navigateTo({
-      url: '/pages/movie/selected/selected'
+      url: '/pages/movie/selected/selected?typeId=' + typeId + "&&typeTitle=" + typeTitle
     });
   },
   bindMovieDetail: function (event) {
+    var id = event.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/movie/movie-detail/movie-detail'
+      url: '/pages/movie/movie-detail/movie-detail?id=' + id
     });
   }
 })

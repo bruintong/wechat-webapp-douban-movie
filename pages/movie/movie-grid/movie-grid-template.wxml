@@ -1,7 +1,7 @@
 
 <!--pages/movie/movie-grid/movie-grid-template.wxml-->
 <template name="movie-grid-template">
-  <view class="movie-wrapper" bindtap="bindMovieDetail" data-movie-id="{{id}}">
+  <view class="movie-wrapper" bindtap="bindMovieDetail" data-id="{{id}}">
     <view class="movie-content">
       <image class="poster" src="{{images.medium}}"></image>
       <text class="name">{{title}}</text>

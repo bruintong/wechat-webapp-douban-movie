@@ -1,19 +1,24 @@
 // pages/movie/movie-detail/movie-poster/movie-poster.js
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {
+
   },
-  onReady:function(){
+  onLoad: function (options) {
+    // 页面初始化 options为页面跳转所带来的参数
+    var posterUrl = options.posterUrl;
+    var readyData = { "posters": [posterUrl] };
+    this.setData(readyData);
+  },
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow:function(){
+  onShow: function () {
     // 页面显示
   },
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
   }
 })
