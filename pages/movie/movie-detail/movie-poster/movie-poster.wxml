@@ -1,0 +1,13 @@
+
+<!--pages/movie/movie-detail/movie-poster/movie-poster.wxml-->
+<view class="container">
+  <scroll-view class="poster-scroll" scroll-x="true">
+    <block wx:for="{{[0, 1,2,3,4,5,6,7,8]}}" wx:for-item="item">
+      <view class="poster-wrapper">
+        <view class="poster-content">
+          <image class="poster" src="/images/default_poster.jpg"></image>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

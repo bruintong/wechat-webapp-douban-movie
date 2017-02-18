@@ -2,7 +2,7 @@
 <!--pages/movie/movie-detail/movie-detail.wxml-->
 <view class="container">
   <view class="session-poster session-poster-spacing">
-    <image class="poster" src="/images/default_poster.jpg"></image>
+    <image class="poster" src="/images/default_poster.jpg" bindtap="bindPoster"></image>
   </view>
   <view class="summary-session">
     <view class="movie-summary">
@@ -16,5 +16,29 @@
       <text class="average">5.8</text>
       <text class="ratings_count">1234人</text>
     </view>
+  </view>
+  <view class="wish-do-session">
+    <text class="wish-btn">想看</text>
+    <text class="do-btn">看过</text>
+  </view>
+  <view class="desc-session">
+    <text class="title">简介</text>
+    <view class="desc-wrapper">
+      <text class="desc-content">故事聚焦在由范·迪塞尔带头的的特工小队和以甄子丹为首的反派组织之间的对决。在这部作品中，迪塞尔饰演的特工凯奇不再是孤胆英雄，他将与一群出色的伙伴共同作战：塞缪尔·杰克逊饰演的国安局特工，印度女星迪皮卡·帕度柯妮饰演的与凯奇颇有渊源的女猎人，凭借《吸血鬼日记》走红的妮娜·杜波夫扮演的技术专家，《女子监狱》女星露比·罗丝饰演的狙击手,中国当红偶像演员吴亦凡饰演的特工Nicks。</text>
+      <text class="extension">展开</text>
+    </view>
+  </view>
+  <view class="directors-casts-session">
+    <view class="title">影人</view>
+    <scroll-view class="directors-casts-scroll" scroll-x="true">
+      <block wx:for="{{[1, 2, 3, 4,5, 6, 7, 8, 9, 10]}}" wx:for-item="item">
+        <view class="directors-casts-wrapper">
+          <view class="directors-casts-content">
+            <image class="image" src="/images/default_poster.jpg"></image>
+            <text class="name">熊大</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
   </view>
 </view>

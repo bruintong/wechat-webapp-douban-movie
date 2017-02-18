@@ -1,0 +1,23 @@
+/* pages/movie/movie-detail/movie-poster/movie-poster.wxss */
+
+.poster-scroll {
+  white-space: nowrap;
+}
+
+.poster-wrapper {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.poster-content {
+  display: flex;
+  height: 100%;
+}
+
+.poster-content .poster {
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 1336rpx;
+  white-space: nowrap;
+}
