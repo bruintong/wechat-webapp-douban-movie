@@ -1,11 +1,11 @@
 
 <!--pages/movie/movie-grid/movie-grid-template.wxml-->
 <template name="movie-grid-template">
-  <view class="movie-wrapper" bindtap="bindMovieDetail" data-movie-id="{{item}}">
+  <view class="movie-wrapper" bindtap="bindMovieDetail" data-movie-id="{{id}}">
     <view class="movie-content">
-      <image class="poster" src="/images/default_poster.jpg"></image>
-      <text class="name">熊出没：奇幻空间</text>
-      <text class="wish-count">9715人想看</text>
+      <image class="poster" src="{{images.medium}}"></image>
+      <text class="name">{{title}}</text>
+      <text class="wish-count">{{collectCount}}人想看</text>
     </view>
   </view>
 </template>

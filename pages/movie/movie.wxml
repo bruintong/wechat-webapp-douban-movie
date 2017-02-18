@@ -1,7 +1,7 @@
 <!--/pages/movie/movie.wxml-->
 <import src="/pages/movie/movie-grid/movie-grid-template.wxml" />
 <import src="/pages/movie/selected-grid/selected-grid-template.wxml" />
-<view class="container">
+<view class="container" bindtouchmove="handleTouchMove">
   <view class="session-search session-search-spacing">
     <icon class="session-search-icon" type="search" size="16"></icon>
     <text class="search-placeholder" bindtap="bindSearchNavigate">搜索电影</text>
@@ -13,8 +13,8 @@
     </view>
     <view class="session-content session-content-spacing">
       <scroll-view class="movie-scroll" scroll-x="true">
-        <block wx:for="{{[0, 1, 2, 3, 4, 5]}}" wx:for-item="item">
-          <template is="movie-grid-template" data="{{item}}" />
+        <block wx:for="{{inTheaters.movies}}" wx:for-item="item">
+          <template is="movie-grid-template" data="{{...item}}" />
         </block>
       </scroll-view>
     </view>
@@ -26,8 +26,8 @@
     </view>
     <view class="session-content session-content-spacing">
       <scroll-view class="movie-scroll" scroll-x="true">
-        <block wx:for="{{[0,1, 2, 3, 4, 5, 6, 7]}}">
-          <template is="movie-grid-template" data="{{item}}" />
+        <block wx:for="{{comingSoon.movies}}" wx:for-item="item">
+          <template is="movie-grid-template" data="{{...item}}" />
         </block>
       </scroll-view>
     </view>
@@ -38,8 +38,8 @@
     </view>
     <view class="session-content session-content-spacing">
       <scroll-view class="selected-scroll" scroll-x="true">
-        <block wx:for="{{[1, 2, 3, 4]}}">
-          <template is="selected-grid-template" data="{{item}}" />
+        <block wx:for="{{[top250, weekly, newMovie, usBox]}}" wx:for-item="selected">
+          <template is="selected-grid-template" data="{{selected}}" />
         </block>
       </scroll-view>
     </view>

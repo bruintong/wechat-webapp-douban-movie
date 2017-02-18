@@ -1,14 +1,14 @@
 
 <!--pages/movie/selected-grid/selected-grid-template.wxml-->
 <template name="selected-grid-template">
-  <view class="selected-wrapper" bindtap="bindSelected" data-selected-id="{{item}}">
+  <view class="selected-wrapper" bindtap="bindSelected" data-selected-title="{{selected.categoryTitle}}">
     <view class="selected-content">
-      <text class="name">豆瓣Top250</text>
+      <text class="name">{{selected.categoryTitle}}</text>
       <text class="desc">8分以上好电影</text>
       <view class="selected-poster">
-        <image class="selected-poster-left" src="/images/default_poster.jpg"></image>
-        <image class="selected-poster-center" src="/images/default_poster.jpg"></image>
-        <image class="selected-poster-right" src="/images/default_poster.jpg"></image>
+        <image class="selected-poster-left" src="{{selected.movies[1].images.small}}"></image>
+        <image class="selected-poster-center" src="{{selected.movies[0].images.small}}"></image>
+        <image class="selected-poster-right" src="{{selected.movies[2].images.small}}"></image>
       </view>
     </view>
   </view>
