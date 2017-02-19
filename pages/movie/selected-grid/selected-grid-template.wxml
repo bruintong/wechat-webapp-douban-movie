@@ -1,7 +1,7 @@
 
 <!--pages/movie/selected-grid/selected-grid-template.wxml-->
 <template name="selected-grid-template">
-  <view class="selected-wrapper" bindtap="bindSelected" data-type-id="{{selected.categoryType}}" data-type-title="{{selected.categoryTitle}}">
+  <view class="selected-wrapper {{selected.categoryType}}-gradient" bindtap="bindSelected" data-type-id="{{selected.categoryType}}" data-type-title="{{selected.categoryTitle}}">
     <view class="selected-content">
       <text class="name">{{selected.categoryTitle}}</text>
       <text class="desc">{{selected.desc}}</text>

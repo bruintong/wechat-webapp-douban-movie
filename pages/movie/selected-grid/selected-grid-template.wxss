@@ -2,12 +2,32 @@
 
 .selected-wrapper {
   display: inline-block;
-  background: #de9703;
   border-radius: 20rpx;
   box-sizing: border-box;
   margin-left: 12rpx;
   margin-right: 12rpx;
 }
+
+.top250-gradient {
+  background: -webkit-linear-gradient(#ff8c00, #f9ebcf);
+  background: linear-gradient(#ff8c00, #f9ebcf);
+}
+
+.weekly-gradient {
+  background: -webkit-linear-gradient(#1fb552, #d4f1de);
+  background: linear-gradient(#1fb552, #d4f1de);
+}
+
+.newMovie-gradient {
+  background: -webkit-linear-gradient(#9957db, #ede1f3);
+  background: linear-gradient(#9957db, #ede1f3);
+}
+
+.usBox-gradient {
+  background: -webkit-linear-gradient(#f85b84, #fee4ef);
+  background: linear-gradient(#f85b84, #fee4ef);
+}
+
 
 .selected-wrapper:first-child {
   margin-left: 0rpx;
