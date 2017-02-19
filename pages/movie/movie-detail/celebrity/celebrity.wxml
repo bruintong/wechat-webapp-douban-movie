@@ -1,2 +1,34 @@
-<!--pages/movie/movie-detail/celebrity/celebrity.wxml-->
-
+<import src="/pages/movie/movie-grid/movie-grid-template.wxml" />
+<view class="container">
+  <view class="session-poster session-poster-spacing">
+    <image class="poster" src="{{avatar}}" bindtap="bindPoster" data-poster-url="{{celebrity.images.large}}"></image>
+  </view>
+  <view class="summary-session">
+    <view class="celebrity-summary">
+      <text class="name">{{celebrity.name}}</text>
+      <text class="country">出生地：{{celebrity.bornPlace}}</text>
+      <text class="birth">1970-1-1</text>
+      <text class="role">导演/编剧/制片/演员</text>
+    </view>
+    <text class="fans">12345粉丝</text>
+  </view>
+  <view class="desc-session">
+    <text class="title">简介</text>
+    <view class="desc-wrapper">
+      <text class="desc-content {{showAllDesc ? 'desc-content-auto' : 'desc-content-3line'}}">冯小刚，中国著名电影导演、编剧。冯小刚作品风格以北方京味儿喜剧著称，擅长商业片。是中国大陆最具有票房号召力的导演之一。冯小刚自幼喜爱美术、文学，高中毕业后进入北京军区文工团，担任舞美设计，先后在《大林莽》、《凯旋在子夜》、《便衣警察》、《好男好女》等几部当时很有影响的电视剧中任美术设计。</text>
+      <block wx:if="{{!showAllDesc}}">
+        <text class="extension"  bindtap="handleExtensiontap">展开</text>
+      </block>
+    </view>
+  </view>
+  <view class="works-session">
+    <text class="title">代表作品</text>
+    <view class="works-session-content">
+      <scroll-view class="works-scroll" scroll-x="true">
+        <block wx:for="{{celebrity.movie}}" wx:for-item="item">
+          <template is="movie-grid-template" data="{{...item}}" />
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

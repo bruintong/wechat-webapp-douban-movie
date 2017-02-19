@@ -115,20 +115,30 @@
 
 .desc-session .title, .directors-casts-session .title {
   color: #9e9e9e;
-  font-size: 24rpx;
+  font-size: 30rpx;
   line-height: 42rpx;
 }
 
-.desc-session .desc-wrapper {
+.desc-wrapper {
+  display: inline-block;
 }
 
 .desc-session .desc-content {
   font-size: 24rpx;
+  color: #4a4a4a;
   line-height: 38rpx;
   text-indent: 2em;
-  overflow: hidden;
   text-overflow: ellipsis;
-  color: #4a4a4a;
+  overflow: hidden;
+  display: block;
+}
+
+.desc-session .desc-content-auto {
+  height: auto;
+}
+
+.desc-session .desc-content-3line {
+  height: 114rpx;
 }
 
 .desc-session .extension {

@@ -1,1 +1,107 @@
 /* pages/movie/movie-detail/celebrity/celebrity.wxss */
+@import "/pages/movie/movie-grid/movie-grid-template.wxss";
+
+.container {
+  background: #fff;
+}
+
+.session-poster {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #e9e9e9;
+}
+
+.session-poster-spacing {
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+
+.session-poster .poster {
+  display: inline-block;
+  margin: 0rpx auto;
+  text-align: center;
+  width: 300rpx;
+  height: 440rpx;
+}
+
+.summary-session {
+  display: flex;
+  flex-direction: row;
+  height: 200rpx;
+  align-items: center;
+}
+
+.celebrity-summary {
+  display: flex;
+  flex-direction: column;
+  width: 500rpx;
+  margin: 30rpx 30rpx 30rpx 30rpx;
+}
+
+.celebrity-summary .name {
+  width: 100%;
+  color: #4a4a4a;
+  font-size: 42rpx;
+  font-weight: 700;
+  line-height: 1.6;
+  word-break: keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.celebrity-summary .country, .birth, .role {
+  font-size: 24rpx;
+  color: #9e9e9e;
+}
+
+.summary-session .fans {
+  color: #9e9e9e;
+  font-size: 24rpx;
+  padding: 4rpx 6rpx 4rpx 6rpx;
+  border-radius: 4rpx;
+  border: 1px solid #9e9e9e;
+}
+
+.desc-session, .works-session {
+  padding: 0rpx 30rpx 0rpx 30rpx;
+  margin: 20rpx 0rpx 20rpx 0rpx;
+}
+
+.desc-session .title, .works-session .title {
+  color: #9e9e9e;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.desc-session .desc-content {
+  display: block;
+  font-size: 24rpx;
+  line-height: 38rpx;
+  text-indent: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #4a4a4a;
+}
+
+.desc-session .desc-content-auto {
+  height: auto;
+}
+
+.desc-session .desc-content-3line {
+  height: 114rpx;
+}
+
+.desc-session .extension {
+  background: #fff;
+  height: 38rpx;
+  font-size: 24rpx;
+  line-height: 38rpx;
+  color: #32cd32;
+}
+
+.works-scroll {
+  width: 100%;
+  white-space: nowrap;
+}

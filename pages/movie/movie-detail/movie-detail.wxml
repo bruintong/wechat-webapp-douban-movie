@@ -23,15 +23,17 @@
   <view class="desc-session">
     <text class="title">简介</text>
     <view class="desc-wrapper">
-      <text class="desc-content">{{movie.summary}}</text>
-      <text class="extension">展开</text>
+      <text class="desc-content {{showAllDesc ? 'desc-content-auto' : 'desc-content-3line'}}">{{movie.summary}}</text>
+      <block wx:if="{{!showAllDesc}}">
+        <text class="extension" bindtap="handleExtensiontap">展开</text>
+      </block>
     </view>
   </view>
   <view class="directors-casts-session">
     <view class="title">影人</view>
     <scroll-view class="directors-casts-scroll" scroll-x="true">
       <block wx:for="{{movie.directorsAndCasts}}" wx:for-item="item">
-        <view class="directors-casts-wrapper" bindtap="handleCelebrity" data-id="{{item.id}}">
+        <view class="directors-casts-wrapper" bindtap="handleCelebrity" data-id="{{item.id}}" data-avatar="{{item.avatars.large}}">
           <view class="directors-casts-content">
             <image class="image" src="{{item.avatars.small}}"></image>
             <text class="name">{{item.name}}</text>

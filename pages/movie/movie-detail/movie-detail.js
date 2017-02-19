@@ -2,6 +2,7 @@
 var app = getApp();
 Page({
   data: {
+    showAllDesc: false,
     movie: {}
   },
   onLoad: function (options) {
@@ -89,6 +90,13 @@ Page({
       url: '/pages/movie/movie-detail/movie-poster/movie-poster?posterUrl=' + posterUrl
     });
   },
+  /** 展开简介   */
+  handleExtensiontap: function (event) {
+    var readyData = {
+      "showAllDesc": true
+    };
+    this.setData(readyData);
+  },
   /** 用户点击想看 */
   handleWishtap: function (event) {
     wx.showModal({
@@ -118,8 +126,10 @@ Page({
   /** 查看影人信息 */
   handleCelebrity: function (event) {
     var id = event.currentTarget.dataset.id;
+    var avatar = event.currentTarget.dataset.avatar;
+
     wx.navigateTo({
-      url: '/pages/movie/movie-detail/celebrity/celebrity?id=' + id
+      url: '/pages/movie/movie-detail/celebrity/celebrity?id=' + id + "&&avatar=" + avatar
     });
   }
 })

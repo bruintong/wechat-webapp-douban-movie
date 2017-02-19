@@ -203,17 +203,20 @@ Page({
 
     this.setData(readyData);
   },
+  /** 搜索电影 */
   bindSearchNavigate: function (event) {
     wx.navigateTo({
       url: '/pages/movie/search/search'
     })
   },
+  /** 显示更多电影列表 */
   bindMore: function (event) {
     var typeId = event.currentTarget.dataset.typeId;
     wx.navigateTo({
       url: '/pages/movie/movie-more/movie-more?typeId=' + typeId
     });
   },
+  /** 跳转到榜单列表 */
   bindSelected: function (event) {
     var typeId = event.currentTarget.dataset.typeId;
     var typeTitle = event.currentTarget.dataset.typeTitle;
@@ -221,6 +224,7 @@ Page({
       url: '/pages/movie/selected/selected?typeId=' + typeId + "&&typeTitle=" + typeTitle
     });
   },
+  /** 跳转电影详情页 */
   bindMovieDetail: function (event) {
     var id = event.currentTarget.dataset.id;
     wx.navigateTo({
