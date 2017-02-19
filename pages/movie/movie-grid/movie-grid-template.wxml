@@ -5,7 +5,7 @@
     <view class="movie-content">
       <image class="poster" src="{{images.medium}}"></image>
       <text class="name">{{title}}</text>
-      <text class="wish-count">{{collectCount}}人想看</text>
+      <text class="wish-count">{{collect_count}}人想看</text>
     </view>
   </view>
 </template>

@@ -127,8 +127,7 @@ Page({
   handleCelebrity: function (event) {
     var id = event.currentTarget.dataset.id;
     var avatar = event.currentTarget.dataset.avatar;
-
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/movie/movie-detail/celebrity/celebrity?id=' + id + "&&avatar=" + avatar
     });
   }

@@ -80,7 +80,7 @@ Page({
   /** 跳转电影详情页 */
   bindMovieDetail: function (event) {
     var id = event.currentTarget.dataset.id;
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/movie/movie-detail/movie-detail?id=' + id
     });
   }

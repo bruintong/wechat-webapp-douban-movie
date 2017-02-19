@@ -22,12 +22,14 @@
   </view>
   <view class="desc-session">
     <text class="title">简介</text>
-    <view class="desc-wrapper">
-      <text class="desc-content {{showAllDesc ? 'desc-content-auto' : 'desc-content-3line'}}">{{movie.summary}}</text>
-      <block wx:if="{{!showAllDesc}}">
-        <text class="extension" bindtap="handleExtensiontap">展开</text>
-      </block>
-    </view>
+    <block wx:if="{{movie.summary.length > 0}}">
+      <view class="desc-wrapper">
+        <text class="desc-content {{showAllDesc ? 'desc-content-auto' : 'desc-content-3line'}}">{{movie.summary}}</text>
+        <block wx:if="{{!showAllDesc}}">
+          <text class="extension" bindtap="handleExtensiontap">展开</text>
+        </block>
+      </view>
+    </block>
   </view>
   <view class="directors-casts-session">
     <view class="title">影人</view>

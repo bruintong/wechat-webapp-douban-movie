@@ -70,7 +70,7 @@ Page({
         id: subject.id,
         title: subject.title,
         rating: subject.rating,
-        collectCount: subject.collect_count,
+        collect_count: subject.collect_count,
         images: subject.images,
         subtype: subject.subtype,
         directors: subject.directors,
