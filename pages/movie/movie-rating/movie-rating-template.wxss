@@ -1,0 +1,69 @@
+.rating {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.rating-star {
+  content: "";
+  display: inline-block;
+  width: 55px;
+  height: 11px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url(/images/icon/ic_rating_s.png);
+}
+
+.allstar10 {
+  background-position: 0px 0px;
+}
+
+.allstar9 {
+  background-position: 0px -11px;
+}
+
+.allstar8 {
+  background-position: 0px -22rpx;
+}
+
+.allstar7 {
+  background-position: 0px -33px;
+}
+
+.allstar6 {
+  background-position: 0px -44px;
+}
+
+.allstar5 {
+  background-position: 0px -55px;
+}
+
+.allstar4 {
+  background-position: 0px -66px;
+}
+
+.allstar3 {
+  background-position: 0px -77px;
+}
+
+.allstar2 {
+  background-position: 0px -88px;
+}
+
+.allstar1 {
+  background-position: 0px -99px;
+}
+
+.allstar0 {
+  background-position: 0px -110px;
+}
+
+.movie-content .rating-average {
+  margin-left: 120rpx;
+  font-size: 20rpx;
+  line-height: 22rpx;
+  color: #878787;
+  height: 22rpx;
+}

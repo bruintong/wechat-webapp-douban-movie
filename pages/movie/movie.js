@@ -3,6 +3,8 @@ var app = getApp();
 
 Page({
   data: {
+    showRating: false,
+    showWish: false,
     acquiredSelected: false,  // 精选榜单只请求一次
     inTheaters: {},   // 影院热映
     comingSoon: {},    // 即将上映
@@ -66,6 +68,15 @@ Page({
     var movies = [];
     for (let idx in data.subjects) {
       var subject = data.subjects[idx];
+      var showRating = false;
+      var showWish = false;
+      if ("inTheaters" == settedKey) {
+        showRating = true;
+        showWish = false;
+      } else {
+        showRating = true;
+        showWish = false;
+      }
       var temp = {
         id: subject.id,
         title: subject.title,
@@ -75,7 +86,9 @@ Page({
         subtype: subject.subtype,
         directors: subject.directors,
         casts: subject.casts,
-        year: subject.year
+        year: subject.year,
+        showRating: showRating,
+        showWish: showWish
       };
       movies.push(temp);
     }

@@ -1,5 +1,6 @@
 /* pages/movie/movie-more/movie-more.wxss */
 @import "/pages/movie/movie-list/movie-list-template.wxss";
+
 .session-content-spacing {
   padding: 0rpx 30rpx 0rpx 30rpx;
   margin-top: 0rpx;
@@ -11,6 +12,7 @@
   display: flex;
   position: fixed;
   background: #fff;
+  z-index: 1;
 }
 
 .session-tab-spacing {

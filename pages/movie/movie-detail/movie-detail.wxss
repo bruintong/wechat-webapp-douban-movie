@@ -1,4 +1,5 @@
 /* pages/movie/movie-detail/movie-detail.wxss */
+@import "/pages/movie/movie-rating/movie-rating-template.wxss";
 
 .container {
   background: #fff;
@@ -70,6 +71,25 @@
 .movie-rating .average {
   font-size: 36rpx;
   font-weight: 700;
+}
+
+.movie-rating .rating {
+  display: flex;
+  flex-direction: row;
+  position: inherit;
+  margin-top: 0rpx;
+  margin-bottom: 0rpx;
+  align-self: center;
+}
+
+.movie-rating .rating-star {
+  content: "";
+  display: inline-block;
+  width: 55px;
+  height: 11px;
+  position: inherit;
+  background-repeat: no-repeat;
+  background-image: url(/images/icon/ic_rating_s.png);
 }
 
 .movie-rating .ratings_count {

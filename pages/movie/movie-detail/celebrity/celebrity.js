@@ -83,5 +83,12 @@ Page({
     wx.redirectTo({
       url: '/pages/movie/movie-detail/movie-detail?id=' + id
     });
+  },
+  /** 查看海报 */
+  bindPoster: function (event) {
+    var posterUrl = event.currentTarget.dataset.posterUrl;
+    wx.navigateTo({
+      url: '/pages/movie/movie-detail/movie-poster/movie-poster?posterUrl=' + posterUrl
+    });
   }
 })

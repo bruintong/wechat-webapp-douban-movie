@@ -1,10 +1,12 @@
 
 <!--pages/movie/movie-grid/movie-grid-template.wxml-->
+<import src="/pages/movie/movie-rating/movie-rating-template.wxml" />
 <template name="movie-grid-template">
   <view class="movie-wrapper" bindtap="bindMovieDetail" data-id="{{id}}">
     <view class="movie-content">
       <image class="poster" src="{{images.medium}}"></image>
       <text class="name">{{title}}</text>
+      <template is="rating-template" data="{{rating}}" />
       <text class="wish-count">{{collect_count}}人想看</text>
     </view>
   </view>

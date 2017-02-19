@@ -1,5 +1,5 @@
 /* pages/movie/movie-grid/movie-grid.wxss */
-
+@import "/pages/movie/movie-rating/movie-rating-template.wxss";
 .movie-wrapper {
   display: inline-block;
   margin-left: 10rpx;

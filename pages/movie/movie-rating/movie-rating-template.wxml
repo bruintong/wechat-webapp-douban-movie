@@ -1,0 +1,6 @@
+<template name="rating-template">
+  <view class="rating">
+    <view class="rating-star allstar{{rating.average | 0}}"></view>
+    <text class="rating-average">{{rating.average}}</text>
+  </view>
+</template>

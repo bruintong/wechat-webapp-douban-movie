@@ -1,7 +1,7 @@
 <import src="/pages/movie/movie-grid/movie-grid-template.wxml" />
 <view class="container">
   <view class="session-poster session-poster-spacing">
-    <image class="poster" src="{{avatar}}" bindtap="bindPoster" data-poster-url="{{celebrity.images.large}}"></image>
+    <image class="poster" src="{{avatar}}" bindtap="bindPoster" data-poster-url="{{avatar}}"></image>
   </view>
   <view class="summary-session">
     <view class="celebrity-summary">

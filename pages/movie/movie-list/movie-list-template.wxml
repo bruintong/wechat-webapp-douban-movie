@@ -1,7 +1,8 @@
 
 <!--pages/movie/movie-list/movie-list.wxml-->
+<import src="/pages/movie/movie-rating/movie-rating-template.wxml" />
 <template name="movie-list-template">
-  <view class="movie-wrapper"  bindtap="bindMovieDetail" data-id="{{id}}">
+  <view class="movie-wrapper" bindtap="bindMovieDetail" data-id="{{id}}">
     <view class="movie-content">
       <image class="poster" src="{{images.medium}}"></image>
       <view class="movie-summary">
@@ -9,6 +10,7 @@
         <text class="directors">导演：{{directors}}</text>
         <text class="casts">主演：{{casts}}</text>
         <text class="genres">类型：{{genres}}</text>
+        <template is="rating-template" data="{{rating}}" />
         <text class="wish-count" style="color:#9bdff9;">{{collectCount}}人想看</text>
       </view>
       <block wx:if="{{typeId == 'comingsoon'}}">

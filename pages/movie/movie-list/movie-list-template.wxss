@@ -1,4 +1,5 @@
 /* pages/movie/movie-list/movie-list.wxss */
+@import "/pages/movie/movie-rating/movie-rating-template.wxss";
 
 .session-movie {
   background: #fff;

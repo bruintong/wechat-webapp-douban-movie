@@ -13,6 +13,9 @@
     </view>
     <view class="movie-rating">
       <text class="average">{{movie.rating.average}}</text>
+      <view class="rating">
+        <view class="rating-star allstar{{movie.rating.average | 0}}"></view>
+      </view>
       <text class="ratings_count">{{movie.ratingsCount}}</text>
     </view>
   </view>
