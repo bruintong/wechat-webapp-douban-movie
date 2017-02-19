@@ -1,5 +1,6 @@
 
 <!--pages/movie/selected/selected.wxml-->
+<import src="/pages/movie/movie-rating/movie-rating-template.wxml" />
 <view class="container">
   <view class="session-selected">
     <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="item">
@@ -11,7 +12,9 @@
           <image class="poster" src="{{item.images.medium}}"></image>
           <view class="movie-summary">
             <text class="name">{{item.title}}</text>
-            <text class="rating">5颗星</text>
+            <block for="{{[item.rating]}}" for-item="item">
+              <template is="rating-template" data="{{...item}}" />
+            </block>
             <text class="desc">故事聚焦在由范·迪塞尔带头的的特工小队和以甄子丹为首的反派组织之间的对决。在这部作品中，迪塞尔饰演的特工凯奇不再是孤胆英雄，他将与一群出色的伙伴共同作战...</text>
           </view>
         </view>

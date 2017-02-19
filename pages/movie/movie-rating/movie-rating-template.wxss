@@ -60,7 +60,7 @@
   background-position: 0px -110px;
 }
 
-.movie-content .rating-average {
+.rating-average {
   margin-left: 120rpx;
   font-size: 20rpx;
   line-height: 22rpx;
