@@ -8,6 +8,7 @@ App({
         usBox: "/v2/movie/us_box",
         newMovies: "/v2/movie/new_movies",
         subject: "/v2/movie/subject/",
-        celebrity: "/v2/movie/celebrity/"
+        celebrity: "/v2/movie/celebrity/",
+        search: "/v2/movie/search?q="
     }
 })

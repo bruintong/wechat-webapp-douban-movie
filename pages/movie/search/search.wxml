@@ -9,4 +9,17 @@
     </block>
     <text class="search-cancel" bindtap="bindSearchCancel">取消</text>
   </view>
+  <view class="session-movie">
+    <block wx:for="{{result.subjects}}" wx:for-item="item">
+      <view class="movie-wrapper" data-id="{{item.id}}" bindtap="handletap">
+        <view class="movie-content">
+          <image class="poster" src="{{item.images.small}}"></image>
+          <view class="summary">
+            <text class="name">{{item.title}}</text>
+            <text class="desc">{{item.summary}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
 </view>

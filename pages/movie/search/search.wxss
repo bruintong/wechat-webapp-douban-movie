@@ -29,3 +29,49 @@
   text-align: center;
   font-size: 28rpx;
 }
+
+.session-movie {
+  background: #fff;
+}
+
+.movie-wrapper {
+  padding: 0rpx 30rpx 0rpx 30rpx;
+  border-bottom: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+
+.movie-wrapper:last-child {
+  border-bottom: 0px solid #e6e6e6;
+}
+
+.movie-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15rpx 0rpx 15rpx 0rpx;
+}
+
+.movie-content .poster {
+  width: 80rpx;
+  height: 100rpx;
+}
+
+.summary {
+  width: 100%;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-content .name {
+  width: 100%;
+  font-size: 32rpx;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.movie-content .desc {
+  width: 100%;
+  font-size: 28rpx;
+  color: #9e9e9e;
+}
