@@ -17,8 +17,8 @@
     </view>
   </view>
   <view class="wish-do-session">
-    <text class="wish-btn">想看</text>
-    <text class="do-btn">看过</text>
+    <text class="wish-btn" catchtap="handleWishtap">想看</text>
+    <text class="do-btn" catchtap="handleDotap">看过</text>
   </view>
   <view class="desc-session">
     <text class="title">简介</text>
@@ -31,7 +31,7 @@
     <view class="title">影人</view>
     <scroll-view class="directors-casts-scroll" scroll-x="true">
       <block wx:for="{{movie.directorsAndCasts}}" wx:for-item="item">
-        <view class="directors-casts-wrapper">
+        <view class="directors-casts-wrapper" bindtap="handleCelebrity" data-id="{{item.id}}">
           <view class="directors-casts-content">
             <image class="image" src="{{item.avatars.small}}"></image>
             <text class="name">{{item.name}}</text>

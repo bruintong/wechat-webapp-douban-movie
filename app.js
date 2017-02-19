@@ -7,6 +7,7 @@ App({
         weekly: "/v2/movie/weekly",
         usBox: "/v2/movie/us_box",
         newMovies: "/v2/movie/new_movies",
-        subject: "/v2/movie/subject/"
+        subject: "/v2/movie/subject/",
+        celebrity: "/v2/movie/celebrity/"
     }
 })

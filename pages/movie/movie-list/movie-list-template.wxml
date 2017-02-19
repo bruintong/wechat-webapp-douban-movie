@@ -8,13 +8,14 @@
         <text class="name">{{title}}</text>
         <text class="directors">导演：{{directors}}</text>
         <text class="casts">主演：{{casts}}</text>
+        <text class="genres">类型：{{genres}}</text>
         <text class="wish-count" style="color:#9bdff9;">{{collectCount}}人想看</text>
       </view>
       <block wx:if="{{typeId == 'comingsoon'}}">
-        <text class="wish-btn" style="color:#de9703;border-color:#de9703">想看</text>
+        <text class="wish-btn" style="color:#de9703;border-color:#de9703" catchtap="handleWishtap">想看</text>
       </block>
       <block wx:if="{{typeId == 'intheaters'}}">
-        <text class="ticket-btn" style="color:#9bdff9;border-color:#9bdff9">购票</text>
+        <text class="ticket-btn" style="color:#9bdff9;border-color:#9bdff9" catchtap="handleTickettap">购票</text>
       </block>
     </view>
   </view>

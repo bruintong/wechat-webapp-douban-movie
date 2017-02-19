@@ -39,6 +39,7 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
+  /** 获取电影数据 */
   getMovieListData: function (url, typeId) {
     var that = this;
     wx.showToast({
@@ -65,6 +66,12 @@ Page({
             casts += subject.casts[j].name + separate;
           }
           casts = casts.substring(0, casts.length - separate.length);
+
+          var genres = "";
+          for (let k in subject.genres) {
+            genres += subject.genres[k] + separate;
+          }
+          genres = genres.substring(0, genres.length - separate.length);
           var temp = {
             id: subject.id,
             title: subject.title,
@@ -73,6 +80,7 @@ Page({
             images: subject.images,
             subtype: subject.subtype,
             directors: directors,
+            genres: genres,
             casts: casts,
             typeId: typeId,
             year: subject.year
@@ -95,6 +103,7 @@ Page({
       }
     });
   },
+  /** 切换标签页 */
   bindSelected: function (event) {
     var that = this;
     var tabId = event.currentTarget.dataset.tabId;
@@ -122,10 +131,34 @@ Page({
       console.log("error");
     }
   },
+  /** 跳转到电影详情 */
   bindMovieDetail: function (event) {
     var id = event.currentTarget.dataset.id;
     wx.navigateTo({
       url: '/pages/movie/movie-detail/movie-detail?id=' + id
+    });
+  },
+  handleWishtap: function (event) {
+    wx.showModal({
+      title: '提示',
+      content: '一起去看吧',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        }
+      },
+      showCancel:false
+    });
+  },
+  handleTickettap: function (event) {
+    wx.showModal({
+      title: '提示',
+      content: '用户点击购票',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        }
+      }
     });
   }
 

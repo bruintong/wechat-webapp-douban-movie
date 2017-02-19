@@ -8,6 +8,7 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     var that = this;
     var typeId = options.typeId;
+    // 设置榜单标题
     var typeTitle = options.typeTitle;
     wx.setNavigationBarTitle({
       title: typeTitle
@@ -28,6 +29,7 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
+  /** 获取电影榜单数据 */
   getMovieListData: function (url, typeId) {
     var that = this;
     wx.showToast({
@@ -92,6 +94,7 @@ Page({
       }
     });
   },
+  /** 跳转到电影详情页 */
   bindMovieDetail: function (event) {
     var id = event.currentTarget.dataset.id;
     wx.navigateTo({

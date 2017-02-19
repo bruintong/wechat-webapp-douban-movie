@@ -37,6 +37,18 @@
   margin-bottom: 10rpx;
 }
 
+.selected-wrapper:first-child .selected-index {
+  color: #e14c63;
+}
+
+.selected-wrapper:nth-child(2) .selected-index {
+  color: #fca167;
+}
+
+.selected-wrapper:nth-child(3) .selected-index {
+  color: #f5c564;
+}
+
 .selected-header-spacing {
   padding: 0rpx 30rpx 0rpx 30rpx;
   margin-top: 30rpx;

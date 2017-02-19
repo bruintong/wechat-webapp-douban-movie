@@ -7,13 +7,13 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     var that = this;
+    var id = options.id;
+    var url = app.globalData.doubanBase + app.globalData.subject + id;
     wx.showToast({
       title: '加载中',
       icon: 'loading',
       duration: 10000
     });
-    var id = options.id;
-    var url = app.globalData.doubanBase + app.globalData.subject + id;
     wx.request({
       url: url,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
@@ -82,10 +82,44 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
+  /** 查看海报 */
   bindPoster: function (event) {
     var posterUrl = event.currentTarget.dataset.posterUrl;
     wx.navigateTo({
       url: '/pages/movie/movie-detail/movie-poster/movie-poster?posterUrl=' + posterUrl
+    });
+  },
+  /** 用户点击想看 */
+  handleWishtap: function (event) {
+    wx.showModal({
+      title: '提示',
+      content: '一起去看吧',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        }
+      },
+      showCancel: false
+    });
+  },
+  /** 用户点击看过 */
+  handleDotap: function (event) {
+    wx.showModal({
+      title: '提示',
+      content: '用户点击看过',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        }
+      },
+      showCancel: false
+    });
+  },
+  /** 查看影人信息 */
+  handleCelebrity: function (event) {
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/movie/movie-detail/celebrity/celebrity?id=' + id
     });
   }
 })
