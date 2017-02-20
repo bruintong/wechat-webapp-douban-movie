@@ -6,6 +6,7 @@
     "pages/movie/movie-more/movie-more",
     "pages/movie/selected/selected",
     "pages/movie/movie-detail/movie-detail",
+    "pages/movie/movie-detail/rating/rating",
     "pages/movie/movie-detail/celebrity/celebrity",
     "pages/movie/movie-detail/movie-poster/movie-poster"
   ],

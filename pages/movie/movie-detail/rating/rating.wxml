@@ -1,0 +1,20 @@
+
+<!--pages/movie/movie-detail/rating/rating.wxml-->
+<view class="container">
+  <view class="session-rating">
+    <view class="rating">
+      <view class="rating-desc">
+        <text class="desc-text">很差</text>
+        <text class="desc-text">较差</text>
+        <text class="desc-text">还行</text>
+        <text class="desc-text">推荐</text>
+        <text class="desc-text">力荐</text>
+      </view>
+      <image class="rating-star" bindtap="handleRating" src="#"></image>
+    </view>
+    <view class="session-textarea">
+      <textarea class="rating-textarea" placeholder-class="rating-placeholder" placeholder="说说你看过之后的感受..." />
+    </view>
+  </view>
+  <button class="confirm" size="default" type="primary" bindtap="handleComfirm">确定</button>
+</view>

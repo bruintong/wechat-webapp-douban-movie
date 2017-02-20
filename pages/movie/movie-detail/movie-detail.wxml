@@ -21,7 +21,7 @@
   </view>
   <view class="wish-do-session">
     <text class="wish-btn" catchtap="handleWishtap">想看</text>
-    <text class="do-btn" catchtap="handleDotap">看过</text>
+    <text class="do-btn" data-id="{{movie.id}}" catchtap="handleDotap">看过</text>
   </view>
   <view class="desc-session">
     <text class="title">简介</text>

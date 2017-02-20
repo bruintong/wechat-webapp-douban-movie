@@ -112,15 +112,9 @@ Page({
   },
   /** 用户点击看过 */
   handleDotap: function (event) {
-    wx.showModal({
-      title: '提示',
-      content: '用户点击看过',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        }
-      },
-      showCancel: false
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/movie/movie-detail/rating/rating?id=' + id
     });
   },
   /** 查看影人信息 */
