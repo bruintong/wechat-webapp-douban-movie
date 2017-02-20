@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/movie/movie",
     "pages/movie/search/search",
     "pages/movie/movie-more/movie-more",
