@@ -25,12 +25,17 @@
 }
 
 .desc-text {
-  width: 22px;
+  width: 32px;
   height: 22px;
-  font-size: 11px;
+  font-size: 15px;
   line-height: 22px;
   text-align: center;
   color: #9e9e9e;
+  opacity: 0;
+}
+
+.desc-text-show {
+  opacity: 1;
 }
 
 .rating-star {
@@ -41,6 +46,23 @@
   position: absolute;
   background-repeat: no-repeat;
   background-image: url("/images/icon/ic_rating_s@2x.png");
+}
+
+.rating-stars-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.star {
+  width: 32px;
+  height: 32px;
+  background: url("/images/icon/ic_rating_star.png") no-repeat;
+}
+
+.star-HL {
+  width: 32px;
+  height: 32px;
+  background: url("/images/icon/ic_rating_star_HL.png") no-repeat;
 }
 
 .session-textarea {

@@ -4,13 +4,21 @@
   <view class="session-rating">
     <view class="rating">
       <view class="rating-desc">
-        <text class="desc-text">很差</text>
-        <text class="desc-text">较差</text>
-        <text class="desc-text">还行</text>
-        <text class="desc-text">推荐</text>
-        <text class="desc-text">力荐</text>
+        <text class="desc-text {{mark == 1 ? 'desc-text-show' : ''}}">很差</text>
+        <text class="desc-text {{mark == 2 ? 'desc-text-show' : ''}}">较差</text>
+        <text class="desc-text {{mark == 3 ? 'desc-text-show' : ''}}">还行</text>
+        <text class="desc-text {{mark == 4 ? 'desc-text-show' : ''}}">推荐</text>
+        <text class="desc-text {{mark == 5 ? 'desc-text-show' : ''}}">力荐</text>
       </view>
-      <image class="rating-star" bindtap="handleRating" src="#"></image>
+      <view class="rating-stars-wrapper" bindtap="bindMark">
+        <block wx:for="{{[1,2,3,4,5]}}" wx:for-item="id">
+          <image class="{{mark >= id ? 'star-HL' : 'star'}}" src="#" data-id="{{id}}"></image>
+        </block>
+      </view>
+
+      <!-- Don't use sprite, can't give a mark -->
+
+      <!--<image class="rating-star" bindtap="handleRating" src="#"></image>-->
     </view>
     <view class="session-textarea">
       <textarea class="rating-textarea" placeholder-class="rating-placeholder" placeholder="说说你看过之后的感受..." />

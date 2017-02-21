@@ -1,7 +1,9 @@
 // pages/movie/movie-detail/rating/rating.js
 var app = getApp();
 Page({
-  data: {},
+  data: {
+    mark: 0
+  },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     var id = options.id;
@@ -24,5 +26,9 @@ Page({
   },
   handleComfirm: function (event) {
     wx.navigateBack();
-  }
+  },
+  bindMark: function (event) {
+    var id = event.target.dataset.id;
+    this.setData({ "mark": id });
+  },
 })
