@@ -7,16 +7,20 @@
     <text class="tab-name {{showComingSoon ? 'tab-selected' : 'tab-normal'}}" bindtap="bindSelected" data-tab-id="{{tabComingsoon}}">即将上映</text>
   </view>
   <view class="session-movie session-movie-spacing">
-    <view class="session-content session-content-spacing">
+    <view class="session-content">
       <block wx:if="{{showIntheaters}}">
-        <block wx:for="{{intheaters.movies}}" wx:for-item="item">
-          <template is="movie-list-template" data="{{...item}}" />
-        </block>
+        <scroll-view class="scroll-movie" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+          <block wx:for="{{intheaters.movies}}" wx:for-item="item">
+            <template is="movie-list-template" data="{{...item}}" />
+          </block>
+        </scroll-view>
       </block>
       <block wx:if="{{showComingSoon}}">
-        <block wx:for="{{comingsoon.movies}}" wx:for-item="item">
-          <template is="movie-list-template" data="{{...item}}" />
-        </block>
+        <scroll-view class="scroll-movie" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+          <block wx:for="{{comingsoon.movies}}" wx:for-item="item">
+            <template is="movie-list-template" data="{{...item}}" />
+          </block>
+        </scroll-view>
       </block>
     </view>
   </view>

@@ -1,20 +1,8 @@
 /* pages/movie/movie-list/movie-list.wxss */
 @import "/pages/movie/movie-rating/movie-rating-template.wxss";
 
-.session-movie {
-  background: #fff;
-  border-width: 1px 0px 0px 0px;
-  border-style: solid;
-  border-color: #e6e6e6;
-}
-
-.session-movie-spacing {
-  margin-top: 84rpx;
-}
-
 .movie-wrapper {
-  padding-top: 30rpx;
-  padding-bottom: 30rpx;
+  padding: 30rpx;
   border-bottom: 1px solid #e6e6e6;
 }
 

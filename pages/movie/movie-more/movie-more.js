@@ -9,23 +9,20 @@ Page({
     acquireIntheaters: false,
     acquireComingsoon: false,
     intheaters: {},
-    comingsoon: {}
+    comingsoon: {},
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     var that = this;
     var typeId = options.typeId;
     var readyData = {};
-    var url = app.globalData.doubanBase;
     if (typeId == "intheaters") {
       readyData = { "showIntheaters": true, "showComingSoon": false, "acquireIntheaters": true };
-      url += app.globalData.inTheaters;
     } else {
       readyData = { "showIntheaters": false, "showComingSoon": true, "acquireComingsoon": true };
-      url += app.globalData.comingSoon;
     }
     this.setData(readyData);
-    that.getMovieListData(url, typeId);
+    that.getMovieListData(typeId);
   },
   onReady: function () {
     // 页面渲染完成
@@ -39,9 +36,25 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
+  /** 通过typeId获取url */
+  getURLByTypeId: function (typeId) {
+    var url = app.globalData.doubanBase;
+    if (typeId == "intheaters") {
+      url += app.globalData.inTheaters;
+    } else {
+      url += app.globalData.comingSoon;
+    }
+    return url;
+  },
   /** 获取电影数据 */
-  getMovieListData: function (url, typeId) {
+  getMovieListData: function (typeId) {
     var that = this;
+    var offset = that.data[typeId].offset || 0;
+    var total = that.data[typeId].total || 999;
+    if (offset === total) {
+      return;
+    }
+    var url = that.getURLByTypeId(typeId);
     wx.showToast({
       title: '加载中',
       icon: 'loading',
@@ -50,10 +63,17 @@ Page({
     wx.request({
       url: url,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      data: {
+        start: offset,
+        count: 5
+      },
       header: { 'content-type': 'json' }, // 设置请求的 header
       success: function (res) {
         var subjects = res.data.subjects;
-        var movies = [];
+        var movies = that.data[typeId].movies || [];
+        var offset = that.data[typeId].offset || 0;
+        var total = res.data.total;
+        offset += subjects.length;
         for (let idx in subjects) {
           var subject = subjects[idx];
           var directors = "";
@@ -90,6 +110,8 @@ Page({
         var readyData = {};
         readyData[typeId] = {
           categoryType: typeId,
+          offset: offset,
+          total: total,
           movies: movies
         }
         that.setData(readyData);
@@ -107,24 +129,21 @@ Page({
   bindSelected: function (event) {
     var that = this;
     var tabId = event.currentTarget.dataset.tabId;
-    var url = app.globalData.doubanBase;
     var readyData = {};
     if (tabId == "intheaters") {
       console.log("intheaters");
       readyData = { "showIntheaters": true, "showComingSoon": false };
       if (!that.data.acquireIntheaters) {
-        url += app.globalData.inTheaters;
         readyData["acquireIntheaters"] = true;
-        that.getMovieListData(url, tabId);
+        that.getMovieListData(tabId);
       }
       this.setData(readyData);
     } else if (tabId == "comingsoon") {
       console.log("comingsoon");
       readyData = { "showIntheaters": false, "showComingSoon": true };
       if (!that.data.acquireComingsoon) {
-        url += app.globalData.comingSoon;
         readyData["acquireComingsoon"] = true;
-        that.getMovieListData(url, tabId);
+        that.getMovieListData(tabId);
       }
       that.setData(readyData);
     } else {
@@ -138,6 +157,22 @@ Page({
       url: '/pages/movie/movie-detail/movie-detail?id=' + id
     });
   },
+  /** 页面滑动到底部 */
+  handleLower: function (event) {
+    console.log("handleLower");
+    var typeId = "";
+    if(this.data.showIntheaters) {
+      typeId = "intheaters";
+    } else {
+      typeId = "comingsoon";
+    }
+    this.getMovieListData(typeId);
+  },
+  /** 页面滑动到顶部 */
+  handleUpper: function (event) {
+    console.log("handleUpper");
+  },
+  /** 点击喜欢按钮 */
   handleWishtap: function (event) {
     wx.showModal({
       title: '提示',
@@ -147,9 +182,10 @@ Page({
           console.log('用户点击确定')
         }
       },
-      showCancel:false
+      showCancel: false
     });
   },
+  /** 点击购票按钮 */
   handleTickettap: function (event) {
     wx.showModal({
       title: '提示',
