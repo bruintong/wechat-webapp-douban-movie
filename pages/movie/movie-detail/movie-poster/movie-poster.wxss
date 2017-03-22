@@ -1,6 +1,8 @@
 /* pages/movie/movie-detail/movie-poster/movie-poster.wxss */
 
 .poster-scroll {
+  width: 100vw;
+  height: 100vh;
   white-space: nowrap;
 }
 
@@ -17,7 +19,7 @@
 
 .poster-content .poster {
   box-sizing: border-box;
-  width: 750rpx;
-  height: 1336rpx;
+  width: 100vw;
+  height: 100vh;
   white-space: nowrap;
 }
