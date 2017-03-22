@@ -21,6 +21,8 @@ Page({
     } else {
       readyData = { "showIntheaters": false, "showComingSoon": true, "acquireComingsoon": true };
     }
+    readyData["windowWidth"] = app.globalData.windowWidth;
+    readyData["windowHeight"] = app.globalData.windowHeight;
     this.setData(readyData);
     that.getMovieListData(typeId);
   },
@@ -51,7 +53,7 @@ Page({
     var that = this;
     var offset = that.data[typeId].offset || 0;
     var total = that.data[typeId].total || 999;
-    if (offset === total) {
+    if (offset >= total) {
       return;
     }
     var url = that.getURLByTypeId(typeId);
@@ -161,7 +163,7 @@ Page({
   handleLower: function (event) {
     console.log("handleLower");
     var typeId = "";
-    if(this.data.showIntheaters) {
+    if (this.data.showIntheaters) {
       typeId = "intheaters";
     } else {
       typeId = "comingsoon";

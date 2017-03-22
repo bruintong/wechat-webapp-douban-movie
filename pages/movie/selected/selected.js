@@ -13,9 +13,14 @@ Page({
     wx.setNavigationBarTitle({
       title: typeTitle
     });
-    var url = app.globalData.doubanBase + app.globalData.top250;
-    that.getMovieListData(url, typeId);
 
+    that.setData({
+      "typeId": typeId,
+      "windowWidth": app.globalData.windowWidth,
+      "windowHeight": app.globalData.windowHeight
+    });
+
+    that.getMovieListData(typeId);
   },
   onReady: function () {
     // 页面渲染完成
@@ -30,29 +35,49 @@ Page({
     // 页面关闭
   },
   /** 获取电影榜单数据 */
-  getMovieListData: function (url, typeId) {
+  getMovieListData: function (typeId) {
     var that = this;
+    var offset = 0;
+    var url = app.globalData.doubanBase + app.globalData.top250;
+    if (typeId == "top250") {
+      offset = that.data.offset || 0;
+      url += "?start=" + offset + "&&count=5";
+    } else if (typeId == "weekly") {
+      offset = that.data.offset || 50;
+      url += "?start=" + offset + "&&count=5";
+    } else if (typeId == "newMovie") {
+      offset = that.data.offset || 100;
+      url += "?start=" + offset + "&&count=5";
+    } else {
+      offset = that.data.offset || 150;
+      url += "?start=" + offset + "&&count=5";
+    }
+
+    that.setData({
+      "offset": offset
+    });
+    var total = that.data.total || 999;
+    // 最多加载50个电影数据
+    if (that.data.movies && that.data.movies.length >= 50) {
+      return;
+    }
+
     wx.showToast({
       title: '加载中',
       icon: 'loading',
       duration: 10000
     });
-    if (typeId == "top250") {
-      url += "?start=0&&count=50";
-    } else if (typeId == "weekly") {
-      url += "?start=50&&count=50";
-    } else if (typeId == "newMovie") {
-      url += "?start=100&&count=50";
-    } else {
-      url += "?start=150&&count=50";
-    }
+
     wx.request({
       url: url,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       header: { 'content-type': 'json' }, // 设置请求的 header
       success: function (res) {
         var subjects = res.data.subjects;
-        var movies = [];
+        var movies = that.data.movies || [];
+        var offset = that.data.offset || 0;
+        var total = res.data.total;
+        offset += subjects.length;
         for (let idx in subjects) {
           var subject = subjects[idx];
           var directors = "";
@@ -81,6 +106,8 @@ Page({
         }
         var readyData = {
           selectedType: typeId,
+          offset: offset,
+          total: total,
           movies: movies
         };
         that.setData(readyData);
@@ -93,6 +120,15 @@ Page({
         wx.hideToast();
       }
     });
+  },
+  /** 页面滑动到底部 */
+  handleLower: function (event) {
+    console.log("handleLower");
+    this.getMovieListData(this.data.typeId);
+  },
+  /** 页面滑动到顶部 */
+  handleUpper: function (event) {
+    console.log("handleUpper");
   },
   /** 跳转到电影详情页 */
   bindMovieDetail: function (event) {

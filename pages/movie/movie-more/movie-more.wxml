@@ -9,14 +9,14 @@
   <view class="session-movie session-movie-spacing">
     <view class="session-content">
       <block wx:if="{{showIntheaters}}">
-        <scroll-view class="scroll-movie" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+        <scroll-view class="scroll-movie" style="height:{{windowHeight}}px" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
           <block wx:for="{{intheaters.movies}}" wx:for-item="item">
             <template is="movie-list-template" data="{{...item}}" />
           </block>
         </scroll-view>
       </block>
       <block wx:if="{{showComingSoon}}">
-        <scroll-view class="scroll-movie" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+        <scroll-view class="scroll-movie" style="height:{{windowHeight}}px" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
           <block wx:for="{{comingsoon.movies}}" wx:for-item="item">
             <template is="movie-list-template" data="{{...item}}" />
           </block>

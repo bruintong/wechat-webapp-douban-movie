@@ -1,5 +1,13 @@
 App({
     onLaunch: function () {
+        var that = this;
+        // 使用设备可视宽高
+        wx.getSystemInfo({
+            success: function (res) {
+                that.globalData.windowWidth = res.windowWidth;
+                that.globalData.windowHeight = res.windowHeight;
+            }
+        });
     },
     getUserInfo: function (cb) {
         var that = this;
@@ -21,6 +29,8 @@ App({
     },
     globalData: {
         userInfo: null,
+        windowWidth: 0,
+        windowHeight: 0,
         doubanBase: "https://api.douban.com",
         inTheaters: "/v2/movie/in_theaters",
         comingSoon: "/v2/movie/coming_soon",

@@ -1,11 +1,11 @@
 
 <!--pages/movie/movie-detail/movie-poster/movie-poster.wxml-->
 <view class="container">
-  <scroll-view class="poster-scroll" scroll-x="true">
+  <scroll-view class="poster-scroll" style="width: {{windowWidth}}px; height:{{windowHeight}}px" scroll-x="true">
     <block wx:for="{{posters}}" wx:for-item="item">
       <view class="poster-wrapper">
         <view class="poster-content">
-          <image class="poster" src="{{item}}"></image>
+          <image class="poster" style="width: {{windowWidth}}px; height:{{windowHeight}}px" src="{{item}}"></image>
         </view>
       </view>
     </block>

@@ -12,6 +12,10 @@
   padding: 40rpx 30rpx 40rpx 30rpx;
 }
 
+.scroll-movie {
+  height:100vh;
+}
+
 .selected-header {
   font-size: 32rpx;
   font-weight: 600;

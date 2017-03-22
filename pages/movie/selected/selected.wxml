@@ -3,22 +3,24 @@
 <import src="/pages/movie/movie-rating/movie-rating-template.wxml" />
 <view class="container">
   <view class="session-selected">
-    <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="item">
-      <view class="selected-wrapper" bindtap="bindMovieDetail" data-id="{{item.id}}">
-        <view class="selected-header selected-header-spacing">
-          <text class="selected-index">{{index + 1}}</text>
-        </view>
-        <view class="selected-movie-content selected-movie-content">
-          <image class="poster" src="{{item.images.medium}}"></image>
-          <view class="movie-summary">
-            <text class="name">{{item.title}}</text>
-            <block for="{{[item.rating]}}" for-item="item">
-              <template is="rating-template" data="{{...item}}" />
-            </block>
-            <text class="desc">故事聚焦在由范·迪塞尔带头的的特工小队和以甄子丹为首的反派组织之间的对决。在这部作品中，迪塞尔饰演的特工凯奇不再是孤胆英雄，他将与一群出色的伙伴共同作战...</text>
+    <scroll-view style="height:{{windowHeight}}px" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+      <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="item">
+        <view class="selected-wrapper" bindtap="bindMovieDetail" data-id="{{item.id}}">
+          <view class="selected-header selected-header-spacing">
+            <text class="selected-index">{{index + 1}}</text>
+          </view>
+          <view class="selected-movie-content selected-movie-content">
+            <image class="poster" src="{{item.images.medium}}"></image>
+            <view class="movie-summary">
+              <text class="name">{{item.title}}</text>
+              <block for="{{[item.rating]}}" for-item="item">
+                <template is="rating-template" data="{{...item}}" />
+              </block>
+              <text class="desc">故事聚焦在由范·迪塞尔带头的的特工小队和以甄子丹为首的反派组织之间的对决。在这部作品中，迪塞尔饰演的特工凯奇不再是孤胆英雄，他将与一群出色的伙伴共同作战...</text>
+            </view>
           </view>
         </view>
-      </view>
-    </block>
+      </block>
+    </scroll-view>
   </view>
 </view>
