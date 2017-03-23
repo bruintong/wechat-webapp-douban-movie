@@ -13,7 +13,7 @@
 - 影人条目信息
 
 ## 预览
-![豆瓣电影](https://github.com/bruintong/wechat-webapp-douban-movie/blob/master/screenshots/douban-movie.gif)
+![豆瓣电影](https://github.com/bruintong/resource/blob/master/screenshots/wechat-webapp-douban-movie/douban-movie.gif)
 
 ## 其他
 声明：非豆瓣官方出品，引用请注明出处
