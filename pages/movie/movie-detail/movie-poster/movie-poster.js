@@ -1,4 +1,5 @@
 // pages/movie/movie-detail/movie-poster/movie-poster.js
+var app = getApp();
 Page({
   data: {
 
