@@ -13,7 +13,6 @@
   height: 11px;
   position: absolute;
   background-repeat: no-repeat;
-  background-image: url(/images/icon/ic_rating_s.png);
 }
 
 .allstar10 {

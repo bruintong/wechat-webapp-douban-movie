@@ -8,7 +8,9 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     var id = options.id;
-    var avatar = options.avatar;
+    //var avatar = options.avatar;
+    // mock 数据，使用固定图片
+    var avatar = 'https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p595.webp'
     var url = app.globalData.doubanBase + app.globalData.celebrity + id;
     this.setData({ "avatar": avatar });
     this.getCelebrityData(url);

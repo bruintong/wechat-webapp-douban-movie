@@ -31,15 +31,12 @@ App({
         userInfo: null,
         windowWidth: 0,
         windowHeight: 0,
-        doubanBase: "https://api.douban.com",
-        inTheaters: "/v2/movie/in_theaters",
-        comingSoon: "/v2/movie/coming_soon",
-        top250: "/v2/movie/top250",
-        weekly: "/v2/movie/weekly",
-        usBox: "/v2/movie/us_box",
-        newMovies: "/v2/movie/new_movies",
-        subject: "/v2/movie/subject/",
-        celebrity: "/v2/movie/celebrity/",
-        search: "/v2/movie/search?q="
+        doubanBase: "https://www.easy-mock.com/mock/5cd0faf6e1fe52746e062d07/",
+        inTheaters: "weapp/movie/in_theaters",
+        comingSoon: "weapp/movie/coming_soon",
+        top250: "weapp/movie/top250",
+        subject: "weapp/movie/subject/",
+        celebrity: "weapp/movie/celebrity/",
+        search: "weapp/movie/search"
     }
 })

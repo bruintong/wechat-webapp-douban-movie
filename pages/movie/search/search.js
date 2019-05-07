@@ -43,7 +43,7 @@ Page({
   /** 提交搜索请求 */
   handleSearchData: function (value) {
     var that = this;
-    var serchURL = app.globalData.doubanBase + app.globalData.search + value + "&&start=0&&count=10";
+    var serchURL = app.globalData.doubanBase + app.globalData.search;
     wx.request({
       url: serchURL,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT

@@ -89,7 +89,6 @@
   height: 11px;
   position: inherit;
   background-repeat: no-repeat;
-  background-image: url(/images/icon/ic_rating_s.png);
 }
 
 .movie-rating .ratings_count {

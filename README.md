@@ -2,7 +2,7 @@
 
 ## 概述
 微信小程序版豆瓣电影（非官方出品）
-- 数据来源：[豆瓣电影API](https://developers.douban.com/wiki/?title=movie_v2)
+- 数据来源：Easy Mock 模拟数据
 - 开发工具：微信开发者工具 0.14.140900
 
 

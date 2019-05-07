@@ -45,7 +45,6 @@
   height: 22px;
   position: absolute;
   background-repeat: no-repeat;
-  background-image: url("/images/icon/ic_rating_s@2x.png");
 }
 
 .rating-stars-wrapper {
@@ -56,13 +55,11 @@
 .star {
   width: 32px;
   height: 32px;
-  background: url("/images/icon/ic_rating_star.png") no-repeat;
 }
 
 .star-HL {
   width: 32px;
   height: 32px;
-  background: url("/images/icon/ic_rating_star_HL.png") no-repeat;
 }
 
 .session-textarea {
