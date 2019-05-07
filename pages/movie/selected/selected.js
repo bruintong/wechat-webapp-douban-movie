@@ -41,16 +41,16 @@ Page({
     var url = app.globalData.doubanBase + app.globalData.top250;
     if (typeId == "top250") {
       offset = that.data.offset || 0;
-      url += "?start=" + offset + "&&count=5";
+      // url += "?start=" + offset + "&&count=5";
     } else if (typeId == "weekly") {
       offset = that.data.offset || 50;
-      url += "?start=" + offset + "&&count=5";
+      // url += "?start=" + offset + "&&count=5";
     } else if (typeId == "newMovie") {
       offset = that.data.offset || 100;
-      url += "?start=" + offset + "&&count=5";
+      // url += "?start=" + offset + "&&count=5";
     } else {
       offset = that.data.offset || 150;
-      url += "?start=" + offset + "&&count=5";
+      // url += "?start=" + offset + "&&count=5";
     }
 
     that.setData({

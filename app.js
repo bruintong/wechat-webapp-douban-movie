@@ -31,12 +31,12 @@ App({
         userInfo: null,
         windowWidth: 0,
         windowHeight: 0,
-        doubanBase: "https://www.easy-mock.com/mock/5cd0faf6e1fe52746e062d07/",
-        inTheaters: "weapp/movie/in_theaters",
-        comingSoon: "weapp/movie/coming_soon",
-        top250: "weapp/movie/top250",
-        subject: "weapp/movie/subject/",
-        celebrity: "weapp/movie/celebrity/",
-        search: "weapp/movie/search"
+        doubanBase: "https://www.easy-mock.com/mock/5cd0faf6e1fe52746e062d07/weapp/douban/",
+        inTheaters: "movie/in_theaters",
+        comingSoon: "movie/coming_soon",
+        top250: "movie/top250",
+        subject: "movie/subject/",
+        celebrity: "movie/celebrity/",
+        search: "movie/search"
     }
 })

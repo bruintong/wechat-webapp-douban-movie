@@ -15,8 +15,8 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-    var inTheatersURL = app.globalData.doubanBase + app.globalData.inTheaters + "?start=0&&count=10";
-    var comingSoonURL = app.globalData.doubanBase + app.globalData.comingSoon + "?start=0&&count=10";
+    var inTheatersURL = app.globalData.doubanBase + app.globalData.inTheaters;
+    var comingSoonURL = app.globalData.doubanBase + app.globalData.comingSoon;
 
     this.getMovieListData(inTheatersURL, "inTheaters", "影院热映");
     this.getMovieListData(comingSoonURL, "comingSoon", "即将上映");
@@ -111,7 +111,7 @@ Page({
   getSelectedListData: function () {
     var that = this;
     // 豆瓣口碑榜，新片榜是高级接口，票房榜不可用，这里用豆瓣Top250数据 
-    var top250URL = app.globalData.doubanBase + app.globalData.top250 + "?start=0&&count=12";
+    var top250URL = app.globalData.doubanBase + app.globalData.top250;
     console.log("handleTouchMove top250URL: " + top250URL);
     if (!this.data.acquiredSelected) {
       var readyData = {};
